@@ -13,13 +13,17 @@ const thButtonPlugin = () => {
         const decorate = (node, pos) => {
           if (node.type.name === "table_header") {
             decorations.push(
-              Decoration.widget(pos + 1, () => {
-                const div = document.createElement("div");
-                const button = document.createElement("button");
-                button.classList.add("thButton");
-                div.appendChild(button);
-                return div;
-              })
+              Decoration.widget(
+                pos + 1,
+                () => {
+                  const div = document.createElement("div");
+                  const button = document.createElement("button");
+                  button.classList.add("thButton");
+                  div.appendChild(button);
+                  return div;
+                },
+                { side: -1 }
+              )
             );
           }
         };
