@@ -35,8 +35,6 @@ const thButtonPlugin = () => {
   });
 };
 
-// Mix the nodes from prosemirror-schema-list into the basic schema to
-// create a schema with list support.
 const mySchema = new Schema({
   nodes: {
     doc: {
@@ -46,7 +44,6 @@ const mySchema = new Schema({
     text: schema.spec.nodes.get("text"),
     table: {
       content: "table_row+",
-      tableRole: "table",
       isolating: true,
       group: "block",
       parseDOM: [{ tag: "table" }],
@@ -56,7 +53,6 @@ const mySchema = new Schema({
     },
     table_row: {
       content: "(table_cell | table_header)+",
-      tableRole: "row",
       parseDOM: [{ tag: "tr" }],
       toDOM() {
         return ["tr", 0];
@@ -64,7 +60,6 @@ const mySchema = new Schema({
     },
     table_cell: {
       content: "inline*",
-      tableRole: "cell",
       isolating: true,
       parseDOM: [{ tag: "td" }],
       toDOM() {
@@ -73,7 +68,6 @@ const mySchema = new Schema({
     },
     table_header: {
       content: "inline*",
-      tableRole: "header_cell",
       isolating: true,
       parseDOM: [{ tag: "th" }],
       toDOM() {
