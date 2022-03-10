@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<meta charset="utf8" />
+<link rel="stylesheet" href="https://prosemirror.net/css/editor.css" />
+<script src="https://prosemirror.net/examples/prosemirror.js"></script>
+<script src="require-pm.js"></script>
+
+<script src="index.js" defer></script>
+<style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  .placeholder-text {
+    color: gray;
+  }
+  table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0;
+  }
+  td,
+  th {
+    vertical-align: top;
+    box-sizing: border-box;
+    position: relative;
+    min-width: 1em;
+    border: 1px solid #ddd;
+    padding: 3px 5px;
+  }
+  th {
+    font-weight: bold;
+    text-align: left;
+  }
+  .thButton {
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    top: -16px;
+    left: 0;
+  }
+</style>
+<base href="http://prosemirror.net/" />
+
+<div id="editor" style="margin-bottom: 23px"></div>
+
+<div style="display: none" id="content">
+  <table>
+    <thead>
+      <tr>
+        <th>hello</th>
+        <th>world</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>hello</td>
+        <td>world</td>
+      </tr>
+      <tr>
+        <td>hello</td>
+        <td>world</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
